@@ -5,6 +5,7 @@ info:
   license:
     name: MIT
 
+
 paths:
   /users/{user_id}:
     get:
