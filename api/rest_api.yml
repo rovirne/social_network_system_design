@@ -1,0 +1,146 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: vk_api_copy
+  license:
+    name: MIT
+
+paths:
+  /users/{user_id}:
+    get:
+      summary: get user profile
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+
+  /users/{user_id}/friends:
+    get:
+      summary: get friend list
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+
+  /users/{user_id}/friends/{friend_id}:
+    post:
+      summary: add friend
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+      - name: friend_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: remove friend
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+      - name: friend_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+      responses:
+        '200':
+          description: OK
+
+  /posts:
+    post:
+      summary: create post
+
+      responses:
+        '200':
+          description: OK
+
+  /media:
+    post:
+      summary: upload media
+
+      responses:
+        '200':
+          description: OK
+
+  /feed:
+    get:
+      summary: get home feed
+
+      responses:
+        '200':
+          description: OK
+
+  /users/{user_id}/feed:
+    get:
+      summary: get user feed
+
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+      responses:
+        '200':
+          description: OK
+
+  /chats:
+    get:
+      summary: get all user chats
+
+      responses:
+        '200':
+          description: OK
+
+  /chats/{chat_id}/messages:
+    get:
+      summary: get chat messages
+
+      parameters:
+      - name: chat_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: send message
+
+      parameters:
+      - name: chat_id
+        in: path
+        required: true
+        schema:
+          type: string
+
+      responses:
+        '200':
+          description: OK

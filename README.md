@@ -1,1 +1,1 @@
-Creating homeworks for Balun course
+System design for a social network, from balun course
