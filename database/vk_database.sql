@@ -1,3 +1,12 @@
+-- Replication:
+-- - primary-replica (1 sync + async)
+-- - replication factor 3
+
+-- Sharding:
+-- - users domain → key by user_id
+-- - chats domain → key by chat_id
+
+
 Table users {
   id integer [primary key]
   username varchar
